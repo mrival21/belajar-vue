@@ -1,0 +1,93 @@
+<script setup>
+import { ref } from 'vue'
+
+let msg = "hello world"
+let rawHtml = "<li>apakah dia bisa seperti semula?<li>"
+
+let angka1 = 200
+let angka2 = 10
+let hasil = angka1 + angka2
+let hasil2 = angka1 - angka2
+let hasil3 = angka1 * angka2
+let hasil4 = angka1 / angka2
+
+
+let data = [
+  {
+    nama : 'Mudal',
+    kelas : 'XII RPL2',
+    alamat : 'Kp sukaluyu',
+    sekolah : 'SMK ASSALAAM'
+  },
+  {
+    nama : 'Useng',
+    kelas : 'XII RPL1',
+    alamat : 'Kp seureuh',
+    sekolah : 'SMK ASSALAAM'
+  },
+  {
+    nama : 'Papaw',
+    kelas : 'XII RPL7',
+    alamat : 'Kp margahayu',
+    sekolah : 'SMK ASSALAAM'
+  },
+  {
+    nama : 'Asuay',
+    kelas : 'XII RPL5',
+    alamat : 'Kp gabisa soal kampung',
+    sekolah : 'SMK ASSALAAM'
+  },
+  {
+    nama : 'Muhammad Rival Nugraha',
+    kelas : 'XII RPL2',
+    alamat : 'Kp sukaluyu',
+    sekolah : 'SMK ASSALAAM'
+  }
+]
+</script>
+
+
+
+<template>
+  <div id="app">
+    <h1>{{ msg }}</h1>
+    <span v-html="rawHtml"></span>
+    <span v-html="rawHtml" style="color: chartreuse;"></span>
+    <button :disabled="isButtonDisabled" onclick="alert('jika Allah berkehendak')">iya</button> &ensp;
+    <button :disabled="isButtonDisabled" onclick="alert('tapi aku mau di seperti biasa lagi')">tidak</button> <br>
+    <a v-bind:href="url">silahkan klik disini</a> <br>
+    <a :href="url">sama aja</a> <br>
+    <a v-on:click="doSomething">link</a> <br>
+    <input v-model="message" placeholder="masukan email anda"> <br>
+    <input v-model="message" placeholder="masukan password anda"> <br>
+    <h1>SEKARANG ARITMATIKA</h1>
+    
+    bilangan1 = {{ angka1 }} <br>
+    bilangan2 = {{ angka2 }} <br>
+      hasil perjumlahan = {{ angka1 }} + {{ angka2 }} = {{ hasil }} <br>
+      hasil pengurangan = {{ angka1 }} - {{ angka2 }} = {{ hasil2 }} <br>
+      hasil perkalian = {{ angka1 }} * {{ angka2 }} = {{ hasil3 }} <br>
+      hasil pembagian = {{ angka1 }} / {{ angka2 }} = {{ hasil4 }} <br>
+
+
+      <br>
+      latihan
+      <table border="">
+          <tr style="background-color: darkgray;">
+            <th>NAMA</th>
+            <th>KELAS</th>
+            <th>ALAMAT</th>
+            <th>SEKOLAH</th>
+          </tr>
+
+          <tr v-for="siswa in data">
+           <td>{{ siswa.nama }}</td>
+           <td>{{ siswa.kelas }}</td>
+           <td>{{ siswa.alamat }}</td>
+           <td>{{ siswa.sekolah }}</td>
+          </tr>
+      </table>
+
+
+  </div>
+</template>
