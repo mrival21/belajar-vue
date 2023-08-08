@@ -1,6 +1,6 @@
 <template>
-    <div class="block w-full overflow-auto scrolling-touch">
-        <table class="w-full max-w-full mb-4 bg-transparent table-hover table-bordered"> 
+    <div class="block w-full overlow-auto scrolling-touch" >
+        <table class="w-full max-w-full mb-4 bg-transparent table-hover table-bordered" > 
             <thead>
                 <tr>
                     <th>#</th>
