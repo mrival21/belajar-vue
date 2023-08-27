@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="bg-gray-100 pt-20">
+    <div class=" bg-gray-100 pt-20">
       <h1 class="mb-10 text-center text-2xl font-bold">Cart Items</h1>
       <div class="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
         <div class="rounded-lg md:w-2/3">
@@ -16,18 +16,22 @@
                 </div>
                 <div class="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
                   <div class="flex items-center border-gray-100">
-                    <span @click="changeQty({cartId: cart.cart_id, typeQty: 'minus'})"
-                      class="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50">
-                      - </span>
-                    <span class="mr-3 ml-3">
-                      {{ cart.qty }}
-                    </span>
-                    <span @click="changeQty({cartId: cart.cart_id, typeQty: 'plus'})"
-                      class="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50">
-                      + </span>
+                    <button @click="changeQty({cartId: cart.cart_id, typeQty: 'minus'})"
+                    class="flex items-center justify-center rounded-l-md
+                    bg-gray-200 px-4 transition hover:bg-black hover:text-white"
+                    >
+                     -
+                    </button>
+                    <span class="mr-2 ml-2">{{ cart.qty }}</span>
+                    <button @click="changeQty({cartId: cart.cart_id, typeQty: 'plus'})"
+                    class="flex items-center justify-center rounded-l-md
+                    bg-gray-200 px-4 transition hover:bg-black hover:text-white"
+                    >
+                     +
+                    </button>
                   </div>
                   <div class="flex items-center space-x-4">
-                    <p class="text-sm">Rp. {{ cart.regular_price }}</p>
+                    <p class="text-sm">Rp. {{ cart.regular_price * cart.qty }}</p>
                     <button type="button" @click="removeItem(cart.cart_id)">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="h-5 w-5 cursor-pointer duration-150 hover:text-red-500">
@@ -48,7 +52,7 @@
           </div>
           <div class="flex justify-between">
             <p class="text-gray-700">Shipping</p>
-            <p class="text-gray-700">Rp. 0</p>
+            <p class="text-gray-700">Rp.0</p>
           </div>
           <hr class="my-4" />
           <div class="flex justify-between">
@@ -58,17 +62,8 @@
 
             </div>
           </div>
-          <router-link to="/checkout">
-                                <button type="button"
-                                    class="group inline-flex w-full items-center justify-center rounded-md bg-gray-900 px-6 py-4 text-lg font-semibold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800">
-                                    Checkout
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                        class="group-hover:ml-8 ml-4 h-6 w-6 transition-all" fill="none" viewBox="0 0 24 24"
-                                        stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                                    </svg>
-                                </button>
-                            </router-link>
+          <a href="/checkout"><button class="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Check
+            out</button></a>
         </div>
       </div>
     </div>
@@ -76,6 +71,7 @@
 </template>
 <script>
 import { mapGetters, mapActions } from 'vuex';
+import cart from '../store/modules/cart';
 
 export default {
   computed: {
@@ -86,15 +82,15 @@ export default {
     ...mapActions('product', ['fetchProduk']),
     totalHarga() {
       this.total = this.getCart.reduce((acc, product) => {
-        return acc + parseFloat(product.regular_price);
+        return acc + parseFloat(product.regular_price * product.qty );
       }, 0);
       return this.total.toFixed(2);
     },
     removeItem(cartId) {
-      this.$store.dispatch('cart/removeFromCart', cartId);
+      this.$store.dispatch('cart/removeFromCart', cartId)
     },
     changeQty(cartId, typeQty) {
-      this.$store.dispatch('cart/changeQuantity', cartId, typeQty);
+      this.$store.dispatch('cart/changeQuantityCart', cartId, typeQty)
     },
   },
   //remove product

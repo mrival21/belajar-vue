@@ -1,24 +1,46 @@
 <template>
-  <div class="m-10 max-w-sm">
-<div class="rounded-lg border bg-white px-4 pt-8 pb-10 shadow-lg">
-  <div class="relative mx-auto w-36 rounded-full">
-    <span class="absolute right-0 m-3 h-3 w-3 rounded-full bg-green-500 ring-2 ring-green-300 ring-offset-2"></span>
-    <img class="mx-auto h-auto w-full rounded-full" src="../assets/ika.jpg" alt="" />
-  </div>
   <br>
-  <h3 class="font-lg text-semibold text-center leading-6 text-gray-600">Nama : {{ getUser.name}}</h3>
-  <p class="text-center text-sm leading-6 text-gray-500 hover:text-gray-600">Email : {{ getUser.email}}</p>
-  <ul class="mt-3 divide-y rounded bg-gray-100 py-2 px-3 text-gray-600 shadow-sm hover:text-gray-700 hover:shzadow">
+  <br>
+ <div class="mx-2 my-10 rounded-xl border bg-white px-4 shadow-md sm:mx-auto sm:max-w-xl sm:px-8">
+<div class="mb-2 flex flex-col gap-y-6 border-b py-8 sm:flex-row sm:items-center sm:justify-between">
+  <div class="flex items-center">
+    <img class="h-14 w-14 rounded-full object-cover" src="https://img.freepik.com/free-vector/businessman-working-laptop-computer-office-3d-character-isolated-white-background_40876-3756.jpg?size=626&ext=jpg&ga=GA1.2.1081581823.1690350210&semt=sph" alt="Simon Lewis" />
+    <div class="ml-4 w-56">
+      <p class="text-slate-700 text-xl font-bold ">{{ getUser.name }}</p>
+      <p class="text-slate-500">{{ getUser.email }}</p>
+    </div>
+  </div>
+  
+</div>
+<ul class="mt-3 divide-y rounded bg-gray-100 py-2 px-3 text-gray-600 shadow-sm hover:text-gray-700 hover:shadow">
     <li class="flex items-center py-3 text-sm">
-      <span>Status</span>
-      <span class="ml-auto"><span class="rounded-full bg-green-200 py-1 px-2 text-xs font-medium text-green-700">Open for side gigs</span></span>
+      <span>Jalan</span>
+      <span class="ml-auto">{{ address.address }}</span>
     </li>
     <li class="flex items-center py-3 text-sm">
-      <span>Joined On</span>
-      <span class="ml-auto">Apr 08, 2022</span>
+      <span>Code Pos</span>
+      <span class="ml-auto">{{ address.postal_code }}</span>
+    </li>
+    <li class="flex items-center py-3 text-sm">
+      <span>Kota</span>
+      <span class="ml-auto">{{ address.city }}</span>
+    </li>
+    <li class="flex items-center py-3 text-sm">
+      <span>Provinsi</span>
+      <span class="ml-auto">{{ address.state }}</span>
+    </li>
+    <li class="flex items-center py-3 text-sm">
+      <span>Negara</span>
+      <span class="ml-auto">{{ address.country }}</span>
+    </li>
+    <li class="flex items-center py-3 text-sm">
+      <span>Phone</span>
+      <span class="ml-auto">{{ address.phone }}</span>
     </li>
   </ul>
-</div>
+
+  <br>
+  <br> 
 </div>
 
 </template>
@@ -27,12 +49,19 @@ import { mapGetters, mapActions } from 'vuex';
 
 export default {
   computed: {
-      ... mapGetters('user', ['getUser']),
+      ...mapGetters('user', ['getUser']),
+      ...mapGetters('auth', ['getAddress']),
+      address() {
+        return this.getAddress.data[0]
+      }
+
   },
   methods: {
       ...mapActions('user', ["fetchUser"]),
+      ...mapActions('auth', ["getUserAddress"]),
   },
   created() {
+    this.getUserAddress()
       this.fetchUser();
   },
 }
