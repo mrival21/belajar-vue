@@ -1,33 +1,6 @@
 <template>
-    <div class="overflow-x-hidden">
-    <header class="text-slate-700 relative flex max-w-screen-xl flex-col overflow-hidden px-4 py-4 lg:mx-auto lg:flex-row lg:items-center">
-      <a href="#" class="flex items-center whitespace-nowrap text-2xl font-black">
-        <span class="mr-2 w-8">
-          <img src="/images/JOJj79gp_Djhwdp_ZOKLL.png" alt="" />
-        </span>
-        spline
-      </a>
-      <input type="checkbox" class="peer hidden" id="navbar-open" achecked />
-      <label class="absolute top-5 right-5 cursor-pointer lg:hidden" for="navbar-open">
-        <span class="sr-only">Toggle Navigation</span>
-        <svg class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </label>
-      <nav aria-label="Header Navigation" class="peer-checked:pt-8 peer-checked:max-h-60 flex max-h-0 w-full flex-col items-center overflow-hidden transition-all lg:ml-24 lg:max-h-full lg:flex-row">
-        <ul class="flex w-full flex-col items-center space-y-2 lg:flex-row lg:justify-center lg:space-y-0">
-          <li class="lg:mr-12"><a class="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2" href="#">Components</a></li>
-          <li class="lg:mr-12"><a class="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2" href="#">Pricing</a></li>
-          <li class="lg:mr-12"><a class="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2" href="#">Contact</a></li>
-          <li class="lg:mr-12"><a class="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2" href="#">FAQ</a></li>
-        </ul>
-        <hr class="mt-4 w-full lg:hidden" />
-        <div class="my-4 flex items-center space-x-6 space-y-2 lg:my-0 lg:ml-auto lg:space-x-8 lg:space-y-0">
-          <a href="#" title="" class="whitespace-nowrap rounded font-medium transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2 hover:text-opacity-50"> Log in </a>
-          <a href="#" title="" class="whitespace-nowrap rounded-xl bg-blue-700 px-5 py-3 font-medium text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2 hover:bg-blue-600">Get free trial</a>
-        </div>
-      </nav>
-    </header>
+    
+    
   
     <div class="relative py-12 sm:py-16 lg:pt-20 xl:pb-0">
       <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -57,7 +30,6 @@
         </div>
       </div>
       </div>
-    </div>
 
 
     <div class="relative py-12 sm:py-16 lg:pt-20 xl:pb-0">
@@ -80,7 +52,7 @@
     <div class="grid grid-cols-3 gap-4">
   <div><div class="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
   <a class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href="#">
-    <img class="object-cover" src="https://asset.kompas.com/crops/xwI9RGPtRtclWsqFoK8mZf9ABKo=/145x0:1765x1080/750x500/data/photo/2022/08/11/62f49ef2ed77d.jpg" alt="product image" />
+    <img class="object-cover" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/2eff461f-f3ac-4285-9c6a-2f22173aac42/custom-nike-air-force-1-low-by-you.png" alt="product image" />
     <span class="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">39% OFF</span>
   </a>
   <div class="mt-4 px-5 pb-5">
@@ -125,7 +97,7 @@
 
   <div><div class="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
   <a class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href="#">
-    <img class="object-cover" src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8c25lYWtlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="product image" />
+    <img class="object-cover" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/2eff461f-f3ac-4285-9c6a-2f22173aac42/custom-nike-air-force-1-low-by-you.png" alt="product image" />
     <span class="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">39% OFF</span>
   </a>
   <div class="mt-4 px-5 pb-5">

@@ -16,7 +16,7 @@ import store from "../store";
 
 const routes = [
     {
-        path: "/",
+        path: "/Home",
         name: "Home",
         component: Home,
         meta: { requireLogin: true },
